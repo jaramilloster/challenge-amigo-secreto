@@ -1,0 +1,216 @@
+/* Variables para temas claro y oscuro */
+:root {
+    --color-primary: #4B69FD;
+    --color-secondary: #FFF9EB;
+    --color-tertiary: #C4C4C4;
+    --color-button-add: #4CAF50; /* Verde */
+    --color-button-draw: #FF9800; /* Naranja */
+    --color-button-reset: #03A9F4; /* Azul */
+    --color-button-theme: #FF4081; /* Rosa */
+    --color-button-hover: #D1D1D1; /* Gris claro */
+    --color-button-active: #2C2C2C; /* Gris oscuro */
+    --color-text: #444444;
+    --color-white: #FFFFFF;
+}
+
+[data-theme="dark"] {
+    --color-primary: #1E1E2F;
+    --color-secondary: #2C2C3E;
+    --color-tertiary: #45465A;
+    --color-button-add: #3B8B3B; /* Verde oscuro */
+    --color-button-draw: #C77800; /* Naranja oscuro */
+    --color-button-reset: #0277BD; /* Azul oscuro */
+    --color-button-theme: #FF80AB; /* Rosa claro */
+    --color-button-hover: #5A5A6E; /* Gris medio */
+    --color-button-active: #1C1C29; /* Gris más oscuro */
+    --color-text: #D1D1E0;
+    --color-white: #F5F5FA;
+}
+
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: var(--color-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 90%;
+    max-width: 600px;
+}
+
+/* Banner */
+.header-banner {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.main-title {
+    font-size: clamp(1.5rem, 4vw, 2.5rem); /* Se adapta al tamaño de la pantalla */
+    color: var(--color-white);
+}
+
+/* Input Section */
+.input-section {
+    background-color: var(--color-secondary);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+.input-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.input-name {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid var(--color-tertiary);
+    border-radius: 5px 0 0 5px;
+    font-size: 1rem;
+    background-color: var(--color-white);
+    color: var(--color-text);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.button-add {
+    background-color: var(--color-button-add);
+    color: var(--color-white);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.button-add:hover {
+    background-color: var(--color-button-hover);
+}
+
+.button-add:active {
+    background-color: var(--color-button-active);
+    transform: scale(0.95);
+}
+
+.name-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+    max-height: 200px;
+    overflow-y: auto; /* Para pantallas pequeñas con muchos nombres */
+}
+
+.name-list li {
+    background-color: var(--color-tertiary);
+    color: var(--color-white);
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-draw {
+    background-color: var(--color-button-draw);
+    color: var(--color-white);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.button-draw:hover {
+    background-color: var(--color-button-hover);
+}
+
+.button-draw:active {
+    background-color: var(--color-button-active);
+    transform: scale(0.95);
+}
+
+.button-reset {
+    background-color: var(--color-button-reset);
+    color: var(--color-white);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.button-reset:hover {
+    background-color: var(--color-button-hover);
+}
+
+.button-reset:active {
+    background-color: var(--color-button-active);
+    transform: scale(0.95);
+}
+
+/* Botón de tema */
+.theme-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--color-button-theme);
+    color: var(--color-white);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.theme-toggle:hover {
+    background-color: var(--color-button-hover);
+}
+
+.theme-toggle:active {
+    background-color: var(--color-button-active);
+    transform: scale(0.95);
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 600px) {
+    .button-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .name-list {
+        font-size: 0.9rem; /* Reducir tamaño de texto en pantallas pequeñas */
+    }
+
+    .input-name {
+        font-size: 0.9rem;
+    }
+
+    .button-add, .button-draw, .button-reset {
+        font-size: 0.9rem;
+        padding: 8px 16px; /* Ajustar tamaño de los botones */
+    }
+}
