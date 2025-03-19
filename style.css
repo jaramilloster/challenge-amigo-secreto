@@ -194,6 +194,22 @@ body {
     transform: scale(0.95);
 }
 
+/* Footer */
+.footer {
+    margin-top: auto;
+    background-color: var(--color-secondary);
+    padding: 20px;
+    text-align: center;
+    color: var(--color-button-theme);
+    font-size: 1rem;
+    font-weight: bold;
+    border-top: 2px solid var(--color-tertiary);
+}
+
+.footer .highlighted-name {
+    color: var(--color-button-add);
+}
+
 /* Ajustes para pantallas pequeñas */
 @media (max-width: 600px) {
     .button-container {
